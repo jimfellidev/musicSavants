@@ -1,18 +1,16 @@
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1"charset="utf-8">
     <link href="style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Literata|Open+Sans&display=swap" rel="stylesheet">
     <title>Music Savants</title>
   </head>
   <body>
-    <header>
-        <div class="menu" id="home">
-            <h1 class="menu__head">Music Savants</h1>
-            <br><br>
-            <h3 class="menu__call"><a href="tel: +1-222-222-2222">Call now: 222-222-2222</a></h3>
-        </div>
+    <header id="home">
         <div class="nav-wrapper">
             <nav id="navigation" class="clearfix">
                 <div class="nav">
@@ -20,6 +18,9 @@
                     <a class="nav__link nav__link--item" href="#contact">Contact Us</a>
                     <a class="nav__link nav__link--item" href="#about">About</a>
                     <a class="nav__link nav__link--item" href="#services">Services</a>
+                    <a class="nav__mail material-icons nav__link nav__link--item" href="mailto:jimfelliwebdev@gmail.com" target="_top">mail_outline</a>
+                    <a class="material-icons nav__call nav__link nav__link--item" href="tel: +12222222222">call</a>
+                    
                 
                     <div class="nav__dropdown">
                         <button class="nav__dropbtn material-icons">
@@ -35,34 +36,57 @@
             </nav>
         </div>
         
-    </header>
-    
-    <div class="content">
-        <div class="services" id="services">
-            <h2>Services</h2>
-            <p>Music Savants offers a nearly endless supply of music lessons to you or your loved ones, all available at your fingertips by clicking <a class="services__link" href="#contact">here</a>.  Whether you are interested in taking a more traditional route with the piano or violin, or want to get in touch with your inner rockstar with the electric guitar, Music Savants will accomodate all!  If you don't have access to our store, we will travel to you! Simply <a class="services__link"href="#contact">contact us</a>!  Pricing varies based on location and instrument.</p>
-                <!-- Scroll slideshow -->
+        <ul class="slideshow">
+                <li>
+                    <span class="slideshow__image"> image 1 </span>
+                    <div class="slideshow__title--container">
+                        <h3>Music Savants</h3>
+                    </div>
+                </li>
+                <li>
+                    <span class="slideshow__image">image 2</span>
+                    <div class="slideshow__title--container">
+                        <h3>Music Savants</h3>
+                    </div>
+                </li>
+                <li>
+                    <span class="slideshow__image">image 3</span>
+                    <div class="slideshow__title--container">
+                        <h3>Music Savants</h3>
+                    </div>
+                </li>
+                <li>
+                    <span class="slideshow__image">image 4</span>
+                    <div class="slideshow__title--container">
+                        <h3>Music Savants</h3> 
+                    </div>
+                </li>
+            </ul>
         
-            <div class="slideshow-container">
+
+
+
+
+        <!-- <div class="slideshow-container">
                 <div class="mySlides fade">
                     <div class="numbertext">1 / 4</div>
-                    <img src="images/img_piano_lesson.jpg" style="width:100%">
-                    <div class="text">Learn the piano</div>
+                    <img class="slideshow__images" src="images/violin.jpg">
+                    <div class="text">MUSIC SAVANTS</div>
                 </div>
                 <div class="mySlides fade">
                     <div class="numbertext">2 / 4</div>
-                    <img src="images/violin.jpg" style="width:100%">
-                    <div class="text">Learn string instruments</div>
+                    <img class="slideshow__images" src="images/img_piano_lesson.jpg">
+                    <div class="text">MUSIC SAVANTS</div>
                 </div>
                 <div class="mySlides fade">
                     <div class="numbertext">3 / 4</div>
-                    <img src="images/img_guitar_lesson.jpg" style="width:100%">
-                <div class="text">Learn the guitar</div>
+                    <img class="slideshow__images" src="images/img_guitar_lesson.jpg">
+                <div class="text">MUSIC SAVANTS</div>
                 </div>
                 <div class="mySlides fade">
                     <div class="numbertext">4 / 4</div>
-                    <img src="images/img_trumpet_lesson.jpg" style="width:100%">
-                <div class="text">Learn brass instruments</div>
+                    <img class="slideshow__images" src="images/img_trumpet_lesson.jpg">
+                <div class="text">MUSIC SAVANTS</div>
                 </div>
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -72,50 +96,57 @@
                 <span class="dot" onclick="currentSlide(1)"></span> 
                 <span class="dot" onclick="currentSlide(2)"></span> 
                 <span class="dot" onclick="currentSlide(3)"></span> 
-                <span class="dot" onclick="currentSlide(4)"></span> 
+                <span class="dot" onclick="currentSlide(4)"></span>  
+            </div> -->
+        </header>
+    <div class="content">
+        <div class="services" id="services">
+            <h2>Services</h2>
+            <div class="services__para">
+            <p>Music Savants offers a nearly endless supply of music lessons to you or your loved ones, all available at your fingertips by clicking <a class="services__link" href="#contact">here</a>.  Whether you are interested in taking a more traditional route with the piano or violin, or want to get in touch with your inner rockstar with the electric guitar, Music Savants will accomodate all!  If you don't have access to our store, we will travel to you! Simply <a class="services__link"href="#contact">contact us</a>!  Pricing varies based on location and instrument.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
-
+          
         </div>
         <div class="about" id="about">
             <h2>About</h2>
-                <p>Established in 2012, Music Savant has been connecting students with teachers regularly for over seven years.  We recently opened our first store, located at 101 Makebelieve ln, Sewell NJ, 08080.  Feel free to stop in and discover what instrument is best for you! </p>
+            <p>Established in 2012, Music Savant has been connecting students with teachers regularly for over seven years.  We recently opened our first store, located at 101 Makebelieve ln, Sewell NJ, 08080.  Feel free to stop in and discover what instrument is best for you! </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
         <div class="contact" id="contact">
-            
             <h2>Contact Us</h2>
-             <!-- FORM -->
-            <div class="form">
-                <form action="action_page.php">
-                    <label for="name">Name</label>
-                        <input type="text" class="form__name" name="name" placeholder="Your name..">
-                    <label for="lname">Phone Number</label>
-                        <input type="text" class="form__number" name="number" placeholder="888-888-8888">
-                    <label for="email">Email</label>
-                        <input type="text" class="form__email" name="email" placeholder="@domain.com">
-                    <label for="instrument">Instrument</label>
-                    <select class="form__inst" name="instrument">
-                        <option value="piano">Piano</option>
-                        <option value="guitar">Guitar</option>
-                        <option value="strings">Strings</option>
-                        <option value="brass">Brass</option>
-                        <option value="woodwind">Woodwind</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <label for="subject">Subject</label>
-                        <textarea class="form__subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-                    <input class="form__submit"type="submit" value="Submit">
-                </form>
+            <div class="contact__container--float">
+                <!-- FORM -->
+                <div class="form__container" id="form">
+                    <form class="form">
+                    <!-- this goes in form -> action="action_page.php" -->
+                        <label for="name">Name</label>
+                            <input type="text" class="form__name" name="name" placeholder="Your name..">
+                        <label for="lname">Phone Number</label>
+                            <input type="text" class="form__number" name="number" placeholder="888-888-8888">
+                        <label for="email">Email</label>
+                            <input type="text" class="form__email" name="email" placeholder="@domain.com">
+                        <label for="instrument">Instrument</label>
+                        <select class="form__inst" name="instrument">
+                            <option value="piano">Piano</option>
+                            <option value="guitar">Guitar</option>
+                            <option value="strings">Strings</option>
+                            <option value="brass">Brass</option>
+                            <option value="woodwind">Woodwind</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <label for="subject">Subject</label>
+                            <textarea class="form__subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                        <input class="form__submit"type="button" value="Submit" 
+                        id="form__submit">
+                    </form>
+                </div>
+                <h2 id="thanks">Thank you!  We'll see you soon!</h2>
             </div>
+            <!-- <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=donkeys%20too&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>Google Maps Generator by <a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div> -->
             <div class="contact__container">
-                <div class="contact__address" > Swing by and visit our new building at 101 Makebelieve ln, Sewell NJ, 08080!  We will leave the door open for you!</div> 
-                <br>
-                <div><a class="contact__call--number">Phone number: (222)-222-2222</a></div>
-                <br>
-                <div class="contact__mail--email"><a href="mailto:jimfelliwebdev@gmail.com" target="_top"> jimfelliwebdev@gmail.com</a></div>
-                <br>
-                <div> <a class="material-icons contact__call" href="tel: +12222222222">call</a> </div>
-                <div class="contact__mail material-icons"><a href="mailto:jimfelliwebdev@gmail.com" target="_top">mail_outline</a></div>
-                
+                <div class="contact__address" > Swing by and visit our new building at 101 Makebelieve ln, Sewell NJ, 08080!  We will leave the door open for you! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Swing by and visit our new building at 101 Makebelieve ln, Sewell NJ, 08080!  We will leave the door open for you! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div> 
             </div>           
         </div>
     </div>
