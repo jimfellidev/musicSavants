@@ -3,7 +3,8 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1"charset="utf-8">
-    <link href="style.css" rel="stylesheet">
+    <link href="styles/swiper.min.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Literata|Open+Sans&display=swap" rel="stylesheet">
@@ -14,10 +15,10 @@
         <div class="nav-wrapper">
             <nav id="navigation" class="clearfix">
                 <div class="nav">
-                    <a class="nav__title nav__link--item" href="#home">Music Savants</a>
-                    <a class="nav__link nav__link--item" href="#contact">Contact Us</a>
-                    <a class="nav__link nav__link--item" href="#about">About</a>
-                    <a class="nav__link nav__link--item" href="#services">Services</a>
+                    <a id="home-link" class="nav__title nav__link--item" href="#home" data-smoothie>Music Savants</a>
+                    <a id="contact-link" class="nav__link nav__link--item" href="#contact" data-smoothie>Contact Us</a>
+                    <a id="about-link" class="nav__link nav__link--item" href="#about" data-smoothie>About</a>
+                    <a id="services-link" class="nav__link nav__link--item" href="#services" data-smoothie>Services</a>
                     <a class="nav__mail material-icons nav__link nav__link--item" href="mailto:jimfelliwebdev@gmail.com" target="_top">mail_outline</a>
                     <a class="material-icons nav__call nav__link nav__link--item" href="tel: +12222222222">call</a>
                     
@@ -35,84 +36,58 @@
                 </div>
             </nav>
         </div>
-        
-        <ul class="slideshow">
-                <li>
-                    <span class="slideshow__image"> image 1 </span>
-                    <div class="slideshow__title--container">
-                        <h3>Music Savants</h3>
-                    </div>
-                </li>
-                <li>
-                    <span class="slideshow__image">image 2</span>
-                    <div class="slideshow__title--container">
-                        <h3>Music Savants</h3>
-                    </div>
-                </li>
-                <li>
-                    <span class="slideshow__image">image 3</span>
-                    <div class="slideshow__title--container">
-                        <h3>Music Savants</h3>
-                    </div>
-                </li>
-                <li>
-                    <span class="slideshow__image">image 4</span>
-                    <div class="slideshow__title--container">
-                        <h3>Music Savants</h3> 
-                    </div>
-                </li>
-            </ul>
-        
 
-
-
-
-        <!-- <div class="slideshow-container">
-                <div class="mySlides fade">
-                    <div class="numbertext">1 / 4</div>
-                    <img class="slideshow__images" src="images/violin.jpg">
-                    <div class="text">MUSIC SAVANTS</div>
+        <!-- slider -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide__image1">
+                    <div class="swiper-slide__content">Music Savants
+                        <div class="swiper-slide__content--para">Love to Learn</div>
+                    </div>
                 </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">2 / 4</div>
-                    <img class="slideshow__images" src="images/img_piano_lesson.jpg">
-                    <div class="text">MUSIC SAVANTS</div>
+                <div class="swiper-slide swiper-slide__image2">
+                    <div class="swiper-slide__content">Music Savants
+                        <div class="swiper-slide__content--para">Challenge Yourself</div>
+                    </div>
                 </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">3 / 4</div>
-                    <img class="slideshow__images" src="images/img_guitar_lesson.jpg">
-                <div class="text">MUSIC SAVANTS</div>
+                <div class="swiper-slide swiper-slide__image3">
+                    <div class="swiper-slide__content">Music Savants
+                        <div class="swiper-slide__content--para">Surpass Your Goals</div>
+                    </div>
                 </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">4 / 4</div>
-                    <img class="slideshow__images" src="images/img_trumpet_lesson.jpg">
-                <div class="text">MUSIC SAVANTS</div>
+                <div class="swiper-slide swiper-slide__image4">
+                    <div class="swiper-slide__content">Music Savants
+                            <div class="swiper-slide__content--para">No Dream is to Big</div>
+                    </div>
                 </div>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
-            <br>
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span> 
-                <span class="dot" onclick="currentSlide(2)"></span> 
-                <span class="dot" onclick="currentSlide(3)"></span> 
-                <span class="dot" onclick="currentSlide(4)"></span>  
-            </div> -->
-        </header>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>         
+        
+    </header>
     <div class="content">
         <div class="services" id="services">
             <h2>Services</h2>
-            <div class="services__para">
-            <p>Music Savants offers a nearly endless supply of music lessons to you or your loved ones, all available at your fingertips by clicking <a class="services__link" href="#contact">here</a>.  Whether you are interested in taking a more traditional route with the piano or violin, or want to get in touch with your inner rockstar with the electric guitar, Music Savants will accomodate all!  If you don't have access to our store, we will travel to you! Simply <a class="services__link"href="#contact">contact us</a>!  Pricing varies based on location and instrument.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="services__content">
+                <div class="services__para">
+                    <p>Music Savants offers a nearly endless supply of music lessons to you or your loved ones, all available at your fingertips by clicking <a class="services__link" href="#contact">here</a>.  Whether you are interested in taking a more traditional route with the piano or violin, or want to get in touch with your inner rockstar with the electric guitar, Music Savants will accomodate all!  If you don't have access to our store, we will travel to you! Simply <a class="services__link"href="#contact">contact us</a>!  Pricing varies based on location and instrument.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
             </div>
-          
+            <div>
+                <img class="services__image" src="images/flute.jpg" alt="placeholder">
+            </div>
         </div>
         <div class="about" id="about">
             <h2>About</h2>
-            <p>Established in 2012, Music Savant has been connecting students with teachers regularly for over seven years.  We recently opened our first store, located at 101 Makebelieve ln, Sewell NJ, 08080.  Feel free to stop in and discover what instrument is best for you! </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="about__content">
+                <p>Established in 2012, Music Savant has been connecting students with teachers regularly for over seven years.  We recently opened our first store, located at 101 Makebelieve ln, Sewell NJ, 08080.  Feel free to stop in and discover what instrument is best for you! </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <img class="about__image" src="images/flute.jpg" alt="placeholder">
         </div>
         <div class="contact" id="contact">
             <h2>Contact Us</h2>
@@ -138,21 +113,29 @@
                         </select>
                         <label for="subject">Subject</label>
                             <textarea class="form__subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-                        <input class="form__submit"type="button" value="Submit" 
+                        <div class="submit-wrapper">
+                            <input class="form__submit"type="button" value="Submit" 
                         id="form__submit">
+                        </div>
                     </form>
                 </div>
                 <h2 id="thanks">Thank you!  We'll see you soon!</h2>
             </div>
             <!-- <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=donkeys%20too&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>Google Maps Generator by <a href="https://www.embedgooglemap.net">embedgooglemap.net</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div> -->
             <div class="contact__container">
-                <div class="contact__address" > Swing by and visit our new building at 101 Makebelieve ln, Sewell NJ, 08080!  We will leave the door open for you! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Swing by and visit our new building at 101 Makebelieve ln, Sewell NJ, 08080!  We will leave the door open for you! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div> 
+                <div class="contact__address" > Swing by and visit our new building at 101 Makebelieve ln, Sewell NJ, 08080!  We will leave the door open for you! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div> 
+                <div class="contact__address contact__address--email">Email: <a  class="contact__address--link" href="mailto:jimfelliwebdev@gmail.com">jimfellidev@gmail.com</a></div>
+                <div class="contact__address contact__address--phone">Phone: 222-222-2222</div>
+                <div class="contact__address contact__address--add">Address: 123 Fake st</div>
             </div>           
         </div>
     </div>
     <footer>
-      <p class="copyright">&copy; 2019 Jim Felli</p>
+      <p class="copyright"><a class="copyright__link" href="https://github.com/jimfellidev">&copy; 2019 Jim Felli</a></p>
     </footer>
   </body>
-  <script src="script.js"></script>
+  <script src="scripts/vanilla-smoothie.min.js"></script>
+  <script src="scripts/smoothie.min.js"></script>
+  <script src="scripts/swiper.min.js"></script>
+  <script src="scripts/script.js"></script>
 </html>

@@ -26,9 +26,6 @@ $brown: #8f754f;
 }
 
 // NAVIGATION MENU
-html {
-    scroll-behavior: smooth;
-}
 
 header {
     font-family: 'Open Sans', sans-serif;
@@ -42,21 +39,19 @@ header {
 
 //STICKY NAVBAR
 .nav-wrapper {
-    height: 57px;
     z-index: 10000000;
     width: 100%;
     position: fixed;
+    top: 0;
     
 }
-.nav {
-    // padding-top: 271.31px;
+.nav {    
     list-style-type: none;
     background-color: $dark-blue;
     margin: 0;
     padding: 14px;
     overflow: auto;
-    border-bottom: solid $white  1px;
-    z-index: 9999;
+    box-shadow: 0 2px 1px 0 gray;    
     &__title {
         float: left;   
     }
@@ -145,130 +140,117 @@ header {
        display: block;
    }
 }
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 50;
-}
-.sticky + .content {
-    padding-top: 102px;
-}
+// .sticky {
+//     position: fixed;
+//     top: 0;
+//     width: 100%;
+//     z-index: 50;
+// }
+
 
 // new slideshow //
-.slideshow {
+
+html, body {
+    position: relative;
+    height: 100%;
+  }
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color:#000;
     margin: 0;
     padding: 0;
-    
 }
-.slideshow,
-.slideshow:after { 
+.swiper-container {
     width: 100%;
     height: 100%;
-    top: 0px;
-    left: 0px;
-    z-index: 0; 
-    list-style-type: none;
-    padding-top: 57px;
-}
-.bull {
-    color: $dark-blue;
-}
-.slideshow:after { 
-    // content: '';
-    // background: transparent url(images/background_dots.jpg) repeat top left; 
-}
-.slideshow__image { 
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    color: transparent;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: none;
-    opacity: 0;
-    z-index: 0;
-    animation: imageAnimation 24s linear infinite 0s; 
-    filter: brightness(50%);
+    position: relative;
 }
 
-.slideshow__title--container { 
-    z-index: 1000;
-    position: absolute;
-    bottom: 20%;
-    left: 0px;
-    width: 100%;
+.swiper-slide {
+    padding-top: 56px;
     text-align: center;
-    opacity: 0;
-    color: #fff;
-    animation: titleAnimation 18s linear infinite 0s; 
-    & h3 {
-        font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
-        font-size: 110px;
-        padding: 0;
-        line-height: 200px; 
-        z-index: 10001;
-        @media screen and (max-width: 1100px) {
-            font-size:  100px;
-        }        
-        @media screen and (max-width: 768px) {
-            font-size: 80px;
-        } 
-        @media screen and (max-width: 576px) {
-            font-size: 55px;
-        }
+    font-size: 18px;
+    background: #fff;
+    background-size: cover;
+    &::before {
+        content: " ";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,0.6);
+    }
+   
+    &__image1 {
+        background-image: url(../images/violin.jpg);
+    }
+    &__image2 {
+        background-image: url(../images/img_piano_lesson.jpg);
+    }
+    &__image3 {
+        background-image: url(../images/img_guitar_lesson.jpg);
+    }
+    &__image4 {
+        background-image: url(../images/img_trumpet_lesson.jpg);
+    }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    &__content {
+            position: absolute;
+            bottom: 22%;
+            left: 9%;
+            display: block;
+            font-size: 40px;
+            box-sizing: border-box;
+            color: $white;
+            z-index: 3;
+            @media screen and (max-width: $xs) {
+                font-size: 30px;
+            }
+            @media screen and (min-width: $lg) {
+                font-size: 60px;
+            }
+            &--para {
+                font-size: 16px;
+                color: $white;
+                @media screen and (max-width: $xs) {
+                    font-size: 16px;
+                }
+                &::before {
+                    content: ' ';
+                    background: red;
+                    position: absolute;
+                    height: 3px;
+                    z-index: 8;
+                    width: 40%;
+                    margin: 0 auto;
+                    left: 0;
+                    right: 0;
+                    bottom: 29px;
+                    @media screen and (max-width: $lg) {
+                        height: 2px;
+                        bottom: 25px;
+                    }
+                    @media screen and (max-width: $xs) {
+                        height: 2px;
+                        bottom: 23px;
+                    }
+
+                }
+            }
     }
 }
-
-
-.slideshow li:nth-child(1) span { 
-    background-image: url(images/violin.jpg) 
-}
-.slideshow li:nth-child(2) span { 
-    background-image: url(images/img_piano_lesson.jpg);
-    animation-delay: 6s; 
-}
-.slideshow li:nth-child(3) span { 
-    background-image: url(images/img_guitar_lesson.jpg);
-    animation-delay: 12s; 
-}
-.slideshow li:nth-child(4) span { 
-    background-image: url(images/img_trumpet_lesson.jpg);
-    animation-delay: 18s; 
-}
-.slideshow li:nth-child(2) div { 
-    animation-delay: 6s; 
-}
-.slideshow li:nth-child(3) div { 
-    animation-delay: 12s; 
-}
-.slideshow li:nth-child(4) div { 
-    animation-delay: 18s; 
-}
-
-@keyframes imageAnimation { 
-    0% { opacity: 0; animation-timing-function: ease-in; }
-    6% { opacity: 1; animation-timing-function: ease-out; }
-    12% { opacity: 1 }
-    25% { opacity: 1}
-    31% { opacity: 0 }
-}
-
-@keyframes titleAnimation { 
-    0% { opacity: 1; animation-timing-function: ease-in; }
-    6% { opacity: 1; animation-timing-function: ease-out; }
-    17% { opacity: 1 }
-    25% { opacity: 1 }
-    100% { opacity: 1 }
-}
-
-.no-cssanimations .slideshow li span{
-	opacity: 1;
-}
-
-
 
 // ---- Content container ---- //
 
@@ -280,6 +262,7 @@ header {
         font-family: 'Open Sans', sans-serif;
         font-family: 'Literata', serif;
         text-transform: uppercase;
+        font-size: 30px;
     }
 }
 
@@ -290,6 +273,7 @@ header {
     background-color: beige;
     border-top: solid black 3px;
     padding: 63px 5%;
+    overflow: auto;
     &__para {
         margin-bottom: 40px;
         color: $dark-green;
@@ -309,96 +293,33 @@ header {
     &__:focus {
         color: $tan;
     }
+    &__content {
+        width: 50%;
+        float: left;
+        @media screen and (max-width: $lg) {
+        width: 100%;
+        float: none;
+        }
+        
+    }
+    &__image {
+        margin-top: 30px;
+        @media screen and (max-width: $lg) {
+        width: 40%;
+        float: right;
+        height: 100%;
+        }
+        @media screen and (min-width: $med) {
+        width: 45%;
+        float: right; 
+        height: 100%;
+        }
+        @media screen and (max-width: $lg) {
+        width: 100%;
+        margin-top: 20px;
+        }
+    }
 }
-
-
-// slideshow // 
-// * {box-sizing:border-box}
-
-// .slideshow-container {
-//   width: 100%;
-//   height: 92.9%;
-//   background-size: cover;
-  
-//   margin: auto;  
-//   background-color: rgb(252, 248, 232);
-//   display: block;
-
-// }
-// .slideshow__images {
-//     @include fullsizeImage();
-//     justify-content: center;
-//     align-items: center;
-// }
-// .mySlides {
-//   display: none;
-// }
-// .prev, .next {
-//   cursor: pointer;
-//   position: relative;
-//   top: 50%;
-//   width: auto;
-//   margin-top: -22px;
-//   padding: 16px;
-//   color: white;
-//   font-weight: bold;
-//   font-size: 18px;
-//   transition: 0.6s ease;
-//   border-radius: 0 3px 3px 0;
-//   user-select: none;
-// }
-// .next {
-//   right: 0;
-//   border-radius: 3px 0 0 3px;
-// }
-// .prev:hover, .next:hover {
-//   background-color: rgba(0,0,0,0.8);
-// }
-// .text {
-//   font-family: sans-serif;
-//   color: $white;
-//   font-size: 60px;
-//   padding: 8px 12px;
-//   position: absolute;
-//   bottom: 50%;
-//   width: 100%;
-//   text-align: center;
-// //   background: rgba(159, 153, 177, 0.05);
-//   display: inline-block;
-//   text-shadow: 2px 2px $dark-blue;
-  
-	
-// }
-// .numbertext {
-//   color: #f2f2f2;
-//   font-size: 12px;
-//   padding: 8px 12px;
-//   position: absolute;
-//   top: 0;
-// }
-// .dot {
-//   cursor: pointer;
-//   height: 15px;
-//   width: 15px;
-//   margin: 0 2px;
-//   background-color: #bbb;
-//   border-radius: 50%;
-//   display: inline-block;
-//   transition: background-color 0.6s ease;
-// }
-// .active, .dot:hover {
-//   background-color: #717171;
-// }
-// .fade {
-//   -webkit-animation-name: fade;
-//   -webkit-animation-duration: 1.5s;
-//   animation-name: fade;
-//   animation-duration: 1.5s;
-// }
-// @-webkit-keyframes fade {
-//   from {opacity: .4} 
-//   to {opacity: 1}
-// }
 
 // ------ about ------ // 
 .about {
@@ -406,9 +327,36 @@ header {
     background-color: $dark-green;
     padding: 63px 5%;
     color: #f2f2f2;
+    overflow: auto;
     & h2 {
         color: $tan;
         text-align: center;
+    }
+    &__content {
+        width: 50%;
+        float: left;
+        @media screen and (max-width: $lg) {
+        width: 100%;
+        float: none;
+        }
+        
+    }
+    &__image {
+        margin-top: 30px;
+        @media screen and (max-width: $lg) {
+        width: 40%;
+        float: right;
+        height: 100%;
+        }
+        @media screen and (min-width: $med) {
+        width: 45%;
+        float: right; 
+        height: 100%;
+        }
+        @media screen and (max-width: $lg) {
+        width: 100%;
+        margin-top: 20px;
+        }
     }
 }
 
@@ -422,20 +370,36 @@ header {
     & h2 {
         color: $dark-blue;
         text-align: center;
+        margin-bottom: 36px;
+    }
+    &__address {
+        &--email {
+            margin-top: 20px;
+        }
+        &--phone {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        &--link {
+            color: black;
+
+        }
     }
     &__container {
         text-align: left;
         @media screen and (min-width: $med) {
             float: right;
-            width: 40%;
+            width: 35%;
         }
     }
 }
+
 #thanks {
     display: none;
     height: 50vh;
     margin-top: 60px;
     color: $brown;
+    padding-top: 100px;
 }
 
 // FORM
@@ -444,6 +408,7 @@ header {
     background-color: #f2f2f2;
     padding: 20px;
     margin-bottom: 30px;
+    text-align: left;
         @media screen and (min-width: $med) {
             width: 85%;
             display: inline-block;
@@ -478,32 +443,33 @@ input[type=text], select, textarea {
     color: $dark-blue;
     border: solid 1px $dark-blue;
   }
+  .submit-wrapper {
+      text-align: center;
+  }
 //   .mapouter {}
 
 
 .copyright {
     border-top: solid $tan 1px;
     text-align: center;
-    color: $white;
     background-color: $dark-blue;
     font-family: sans-serif;
     margin-bottom: 0px;
+    margin-top: 0;
     padding: 12px;
+    &__link {
+        color: $white;
+        text-decoration: none;
+    }
 }
 .contact__container--float {
     @media screen and (min-width: $med) {
         float: right;
-        width: 60%;
+        width: 65%;
     }
 }
+
 // ------  Content  ------ //
 body {
     margin: 0;
 }
-
-// footer {
-    
-//     bottom: 0;
-//     width: 100%;
-//     height: 60px;
-// }
