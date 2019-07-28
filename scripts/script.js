@@ -57,7 +57,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
 
 smoothie();
 
-// debounce   -need assistance
+// debounce   -need assistance    below is basic layout
 
 
 // function debounce(func, wait, immediate) {
