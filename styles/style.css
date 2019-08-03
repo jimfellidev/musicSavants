@@ -2,7 +2,7 @@ header {
   font-family: 'Open Sans', sans-serif;
   font-family: 'Literata', serif;
   text-transform: uppercase;
-  height: 100vh;
+  height: 100%;
 }
 
 .nav-wrapper {
@@ -11,6 +11,8 @@ header {
   position: fixed;
   top: 0;
   height: 57px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 .nav {
@@ -29,15 +31,13 @@ header {
 
 @media screen and (min-width: 575px) {
   .nav__call {
-    visibility: hidden;
-    display: none;
+    display: none !important;
   }
 }
 
 @media screen and (min-width: 575px) {
   .nav__mail {
-    visibility: hidden;
-    display: none;
+    display: none !important;
   }
 }
 
@@ -53,19 +53,20 @@ header {
 
 .nav__link--item {
   color: #F5F0F6;
-  padding: 0 16px;
+  margin: 0 11px;
   text-decoration: none;
   border-radius: 8%;
+  top: 50%;
 }
 
 .nav__link--item:hover {
-  background-color: #F5F0F6;
-  color: #324c72;
+  cursor: pointer;
+  border-bottom: solid 2px #F5F0F6;
 }
 
 .nav__dropdown {
   margin-right: 3%;
-  float: right;
+  float: left;
   overflow: hidden;
 }
 
@@ -74,10 +75,10 @@ header {
   border: none;
   outline: none;
   color: white;
-  padding: 0 16px;
+  padding: 0 0 0 0px;
   background-color: inherit;
   font-family: inherit;
-  margin: 0;
+  margin: 0 0 0 16px;
 }
 
 .nav__dropbtn {
@@ -93,8 +94,71 @@ header {
 @media screen and (min-width: 575px) {
   .nav__dropbtn {
     visibility: hidden;
-    display: none;
+    display: none !important;
   }
+}
+
+.nav__dropbtn--about:after {
+  content: "";
+  display: inline-block;
+  height: 2.5px;
+  background: #F5F0F6;
+  position: absolute;
+  left: 0;
+  -webkit-transform: translate(0, 4px);
+          transform: translate(0, 4px);
+  opacity: 0;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.3s;
+  transition: opacity 0.2s, -webkit-transform 0.3s;
+  transition: opacity 0.2s, transform 0.3s;
+  transition: opacity 0.2s, transform 0.3s, -webkit-transform 0.3s;
+  padding: 0;
+  border-radius: 30%;
+  width: 60%;
+  margin-left: 21px;
+  bottom: 5px;
+}
+
+.nav__dropbtn--cont:after {
+  content: "";
+  display: inline-block;
+  height: 2.5px;
+  background: #F5F0F6;
+  position: absolute;
+  left: 0;
+  -webkit-transform: translate(0, 4px);
+          transform: translate(0, 4px);
+  opacity: 0;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.3s;
+  transition: opacity 0.2s, -webkit-transform 0.3s;
+  transition: opacity 0.2s, transform 0.3s;
+  transition: opacity 0.2s, transform 0.3s, -webkit-transform 0.3s;
+  padding: 0;
+  border-radius: 30%;
+  width: 60%;
+  margin-left: 21px;
+  bottom: 5px;
+}
+
+.nav__dropbtn--serv:after {
+  content: "";
+  display: inline-block;
+  height: 2.5px;
+  background: #F5F0F6;
+  position: absolute;
+  left: 0;
+  -webkit-transform: translate(0, 4px);
+          transform: translate(0, 4px);
+  opacity: 0;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.3s;
+  transition: opacity 0.2s, -webkit-transform 0.3s;
+  transition: opacity 0.2s, transform 0.3s;
+  transition: opacity 0.2s, transform 0.3s, -webkit-transform 0.3s;
+  padding: 0;
+  border-radius: 30%;
+  width: 60%;
+  margin-left: 21px;
+  bottom: 5px;
 }
 
 .nav__dropbtn--content {
@@ -104,12 +168,19 @@ header {
   -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  padding: 0;
+  margin: 0;
 }
 
 @media screen and (min-width: 575px) {
   .nav__dropbtn--content {
     visibility: hidden;
   }
+}
+
+.nav__dropbtn--content li {
+  margin: 0;
+  padding: 0;
 }
 
 .nav__dropbtn--content a {
@@ -120,15 +191,23 @@ header {
   text-decoration: none;
   display: block;
   text-align: left;
+  position: relative;
+}
+
+.nav__dropbtn--content a:hover:after {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  opacity: 1;
 }
 
 .nav__dropbtn--content a:hover {
   background-color: #324c72;
   color: #F5F0F6;
+  cursor: pointer;
 }
 
-.nav__dropdown:hover .nav__dropbtn--content {
-  display: block;
+.nav__dropbtn--about:after {
+  width: 40%;
 }
 
 html, body {
@@ -207,6 +286,9 @@ body {
 @media screen and (max-width: 575px) {
   .swiper-slide__content {
     font-size: 30px;
+    position: relative;
+    left: 1%;
+    bottom: 6%;
   }
 }
 
@@ -302,7 +384,7 @@ body {
   float: left;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .services__content {
     width: 100%;
     float: none;
@@ -317,7 +399,7 @@ body {
   .services__image {
     width: 40%;
     float: right;
-    height: 600px;
+    height: 100%;
   }
 }
 
@@ -325,15 +407,14 @@ body {
   .services__image {
     width: 45%;
     float: right;
-    height: 600px;
+    height: 100%;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .services__image {
     width: 100%;
     margin-top: 20px;
-    height: 400px;
   }
 }
 
@@ -400,6 +481,10 @@ body {
   color: #324c72;
   text-align: center;
   margin-bottom: 36px;
+}
+
+.contact__address {
+  text-align: left;
 }
 
 .contact__address--email {

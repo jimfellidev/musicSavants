@@ -1,27 +1,48 @@
 
 
-//---------- Sticky Navbar ---------------//
-    window.addEventListener('scroll', myFunctionForSticky);
-    var navbar = document.getElementById("navigation");
-    var sticky = navbar.offsetTop;
 
-    function myFunctionForSticky() {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky");
-      } else {
-        navbar.classList.remove("sticky");
-      }
-    }
+
+
+//---------- Sticky Navbar ---------------//
+    // window.addEventListener('scroll', myFunctionForSticky);
+    // var navbar = document.getElementById("navigation");
+    // var sticky = navbar.offsetTop;
+
+    // function myFunctionForSticky() {
+    //   if (window.pageYOffset >= sticky) {
+    //     navbar.classList.add("sticky");
+    //   } else {
+    //     navbar.classList.remove("sticky");
+    //   }
+    // }
     
 
-// ----------- slideshow --------- //
+// hamburger toggle
+
+const menu = document.querySelector('.nav__dropbtn--content');
+  const menuToggle = document.querySelector('.nav__dropbtn');
+
+  menuToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (window.getComputedStyle(menu).display == 'block') {
+      menu.style.display = 'none';
+    } else  {
+      menu.style.display = 'block';
+    }
+  });
+
+// 
+
+
+    // ----------- slideshow --------- //
 
 var swiper = new Swiper('.swiper-container', {
   spaceBetween: 10,
   centeredSlides: true,
   effect: 'fade',
   autoplay: {
-    delay: 5000,
+    delay: 4500,
     disableOnInteraction: false,
   },
   pagination: {
@@ -45,33 +66,43 @@ document.getElementById('form__submit').addEventListener('click',function hide()
     thanks.style.display = 'block';
 }, false);
 
-document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-  anchor.addEventListener('click', function () {
-      smoothScroll.scrollTo(this.getAttribute('href'), 300);
-  });
-});
 
 // Smooth Scroll -import from smoothie.min
 
-// smoothie();
-
 smoothie();
 
-// debounce   -need assistance    below is basic layout
+// throttle   -need assistance    below is basic layout
 
 
-// function debounce(func, wait, immediate) {
-// 	var timeout;
-// 	return function() {
-// 		var context = this, args = arguments;
-// 		var later = function() {
-// 			timeout = null;
-// 			if (!immediate) func.apply(context, args);
-// 		};
-// 		var callNow = immediate && !timeout;
-// 		clearTimeout(timeout);
-// 		timeout = setTimeout(later, wait);
-// 		if (callNow) func.apply(context, args);
-// 	};
-// };
-   
+function throttle(func, wait, options) {
+  var context, args, result;
+  var timeout = null;
+  var previous = 0;
+  if (!options) options = {};
+  var later = function() {
+    previous = options.leading === false ? 0 : Date.now();
+    timeout = null;
+    result = func.apply(context, args);
+    if (!timeout) context = args = null;
+  };
+  return function() {
+    var now = Date.now();
+    if (!previous && options.leading === false) previous = now;
+    var remaining = wait - (now - previous);
+    context = this;
+    args = arguments;
+    if (remaining <= 0 || remaining > wait) {
+      if (timeout) {
+        clearTimeout(timeout);
+        timeout = null;
+      }
+      previous = now;
+      result = func.apply(context, args);
+      if (!timeout) context = args = null;
+    } else if (!timeout && options.trailing !== false) {
+      timeout = setTimeout(later, remaining);
+    }
+    return result;
+  };
+};
+
