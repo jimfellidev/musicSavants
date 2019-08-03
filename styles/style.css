@@ -336,6 +336,20 @@ body {
   }
 }
 
+.swiper-button-next {
+  color: #324c72;
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  opacity: 1;
+  border-left: 30px solid #324c72;
+}
+
+.swiper-button-prev {
+  color: #324c72;
+}
+
 .content {
   font-family: 'Open Sans', sans-serif;
   background-color: #fcf8e8;

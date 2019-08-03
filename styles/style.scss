@@ -319,6 +319,19 @@ body {
     }
 }
 
+.swiper-button-next {
+    color: $dark-blue;
+    width: 0; 
+    height: 0; 
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    opacity: 1;
+    border-left: 30px solid $dark-blue;
+      
+}
+.swiper-button-prev {
+    color: $dark-blue;
+}
 // ---- Content container ---- //
 
 .content {    
