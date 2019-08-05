@@ -355,6 +355,16 @@ body {
    height: 25px;
    width: 25px;
 }
+
+.swiper-pagination-bullet-active {
+    background: $white;
+    opacity: 1 !important; 
+}
+
+.swiper-pagination-bullet {
+    opacity: .3;
+}
+
 // ---- Content container ---- //
 
 .content {    

@@ -390,6 +390,15 @@ body {
   width: 25px;
 }
 
+.swiper-pagination-bullet-active {
+  background: #F5F0F6;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet {
+  opacity: .3;
+}
+
 .content {
   font-family: 'Open Sans', sans-serif;
   background-color: #fcf8e8;
