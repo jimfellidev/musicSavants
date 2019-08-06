@@ -666,6 +666,13 @@ input[type=submit]:hover {
   margin: 0% 10% 0 10%;
 }
 
+@media screen and (min-width: 992px) {
+  .google-maps {
+    margin: 0 20% 0 20%;
+    padding-bottom: 50%;
+  }
+}
+
 .google-maps-text {
   text-align: center;
   margin-bottom: 26px;
@@ -678,6 +685,12 @@ input[type=submit]:hover {
   width: 100% !important;
   height: 100% !important;
   padding-bottom: 5%;
+}
+
+.map-container {
+  margin-top: -30px;
+  padding-bottom: 30px;
+  text-align: center;
 }
 
 body {

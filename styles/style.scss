@@ -588,6 +588,11 @@ input[type=text], select, textarea {
     height: 0;
     overflow: hidden;
     margin: 0% 10% 0 10%;
+    @media screen and (min-width: $lg) {
+        margin: 0 20% 0 20%;
+        padding-bottom: 50%;
+        
+    }
     &-text {
         text-align: center;
         margin-bottom: 26px;
@@ -602,6 +607,13 @@ input[type=text], select, textarea {
     height: 100% !important;
     padding-bottom: 5%;
     // margin-bottom: 5%;
+}
+
+.map-container {
+    // color: $dark-blue;
+    margin-top: -30px;
+    padding-bottom: 30px;
+    text-align: center;
 }
 
 
