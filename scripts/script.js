@@ -41,10 +41,10 @@ var swiper = new Swiper('.swiper-container', {
   spaceBetween: 10,
   centeredSlides: true,
   effect: 'fade',
-  // autoplay: {
-  //   delay: 6000,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 6000,
+    disableOnInteraction: false,
+  },
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
