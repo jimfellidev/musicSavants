@@ -21,8 +21,8 @@ header {
   margin: 0;
   padding: 14px;
   overflow: auto;
-  -webkit-box-shadow: 0 2px 1px 0 gray;
-          box-shadow: 0 2px 1px 0 gray;
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .nav__title {
@@ -95,9 +95,10 @@ header {
 }
 
 .nav__dropdown {
-  margin-right: 3%;
+  margin-right: 2%;
   float: left;
   overflow: hidden;
+  height: 24px;
 }
 
 .nav__dropdown .nav__dropbtn {
@@ -144,9 +145,9 @@ header {
   transition: opacity 0.2s, transform 0.3s, -webkit-transform 0.3s;
   padding: 0;
   border-radius: 30%;
-  width: 60%;
-  margin-left: 21px;
-  bottom: 5px;
+  width: 55px;
+  margin-left: 16px;
+  bottom: 6px;
 }
 
 .nav__dropbtn--cont:after {
@@ -165,9 +166,9 @@ header {
   transition: opacity 0.2s, transform 0.3s, -webkit-transform 0.3s;
   padding: 0;
   border-radius: 30%;
-  width: 60%;
-  margin-left: 21px;
-  bottom: 5px;
+  width: 78px;
+  margin-left: 16px;
+  bottom: 6px;
 }
 
 .nav__dropbtn--serv:after {
@@ -186,17 +187,23 @@ header {
   transition: opacity 0.2s, transform 0.3s, -webkit-transform 0.3s;
   padding: 0;
   border-radius: 30%;
-  width: 60%;
-  margin-left: 21px;
-  bottom: 5px;
+  width: 78px;
+  margin-left: 16px;
+  bottom: 6px;
 }
 
 .nav__dropbtn--content {
+  width: 100%;
+  top: 52px;
+  left: 0;
+  padding: 8px 0 10px;
+  background: #f5f0f6;
   display: none;
+  list-style-type: none;
   position: absolute;
   min-width: 0px;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   z-index: 1;
   padding: 0;
   margin: 0;
@@ -236,8 +243,18 @@ header {
   cursor: pointer;
 }
 
-.nav__dropbtn--about:after {
-  width: 40%;
+.hamburger:hover {
+  background: #324c72 !important;
+}
+
+.hamburger-inner {
+  margin-top: 0 !important;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  background: #F5F0F6 !important;
+  height: 2px !important;
+  width: 30px !important;
 }
 
 html, body {
@@ -482,7 +499,6 @@ body {
 }
 
 .about {
-  border-top: solid black 3px;
   background-color: #385f71;
   padding: 63px 5%;
   color: #f2f2f2;
