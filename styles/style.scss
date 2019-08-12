@@ -155,6 +155,7 @@ header {
     }
     &__dropbtn {
         cursor: pointer;
+        position: relative;
         &:hover {
         background-color: $white;
         color: $dark-blue;
@@ -227,6 +228,14 @@ header {
             }
         }
     }
+}
+
+.show {
+    display: block;
+}
+
+.js-is-hidden {
+    display: none;
 }
 
 .hamburger {

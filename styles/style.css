@@ -114,6 +114,7 @@ header {
 
 .nav__dropbtn {
   cursor: pointer;
+  position: relative;
 }
 
 .nav__dropbtn:hover {
@@ -241,6 +242,14 @@ header {
   background-color: #324c72;
   color: #F5F0F6;
   cursor: pointer;
+}
+
+.show {
+  display: block;
+}
+
+.js-is-hidden {
+  display: none;
 }
 
 .hamburger:hover {

@@ -1,38 +1,85 @@
-
-
-
-
-
-//---------- Sticky Navbar ---------------//
-    // window.addEventListener('scroll', myFunctionForSticky);
-    // var navbar = document.getElementById("navigation");
-    // var sticky = navbar.offsetTop;
-
-    // function myFunctionForSticky() {
-    //   if (window.pageYOffset >= sticky) {
-    //     navbar.classList.add("sticky");
-    //   } else {
-    //     navbar.classList.remove("sticky");
-    //   }
-    // }
     
+  
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
 
-// hamburger toggle
-
+// This works, but doesn't work fluently with click off menu to close
+const menuId = document.getElementById("myDropdown");
 const menu = document.querySelector('.nav__dropbtn--content');
-  const menuToggle = document.querySelector('.nav__dropbtn');
+const menuToggle = document.querySelector('.nav__dropbtn');
+const menuItem = document.querySelector('.nav__dropbtn--item');
+const hamburger = document.querySelector(".hamburger");
+const comboContain = menu.classList.contains('show') && hamburger.classList.contains('is-active');
 
-  menuToggle.addEventListener('click', (e) => {
-    e.preventDefault();
+// menuToggle.addEventListener('click', function() {
+//   document.getElementById("myDropdown").classList.toggle("show");
+// });
 
-    if (window.getComputedStyle(menu).display == 'block') {
-      menu.style.display = 'none';
-    } else  {
-      menu.style.display = 'block';
-    }
+
+
+
+
+
+
+
+
+
+  
+// ON CLICK HAMBURGER MENU OPEN/CLOSE    DOESN'T CLOSE WITH OFF CLICK?
+  hamburger.addEventListener("click", function() {
+    // Toggle class "is-active"
+    hamburger.classList.toggle("is-active");
+    //  open/close menu
+    if (hamburger.classList.contains('is-active')){
+      menuId.classList.add("show");
+    } else {
+      menuId.classList.remove("show");
+    } 
+    
   });
 
-// 
+
+  //    ------  OFF CLICK CLOSE MENU
+document.addEventListener('mouseup', function(event) {
+  if (!comboContain) {
+    menuId.classList.remove('show');
+    hamburger.classList.remove('is-active');
+  } 
+});
+
+
+
+// This doesnt do shit.
+hamburger.addEventListener('click', function(event) {
+  if (comboContain) {
+    menu.classList.remove('show');
+    hamburger.classList.remove('is-active');
+  } 
+});
+
+
+// -------SHOULD WORK TO CLOSE WITH CLICK WHILE OFF CLICK IS ACTIVE????
+// hamburger.addEventListener('click', function(){
+//   if (hamburger.classList.contains('is-active')) {
+//     menu.classList.remove('show');
+//     hamburger.classList.remove('is-active');
+//   }
+// });
+
+
+//  -------off click close alternative
+// window.addEventListener('mouseup', function(event){
+//   if (event.target != menu) {
+//     menu.classList.remove('show');
+    
+//     // hamburger.classList.toggle('is-active')
+//   }
+// });
+  
+
+
+
+
 
 
     // ----------- slideshow --------- //
@@ -107,14 +154,4 @@ function throttle(func, wait, options) {
   };
 };
 
-
-// hamburger
-
-var hamburger = document.querySelector(".hamburger");
-  // On click
-  hamburger.addEventListener("click", function() {
-    // Toggle class "is-active"
-    hamburger.classList.toggle("is-active");
-    // Do something else, like open/close menu
-  });
 
