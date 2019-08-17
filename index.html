@@ -12,7 +12,7 @@
     <title>Music Savants</title>
   </head>
   <body>
-    <header id="home">
+    <header id="home" class="menu-section">
         <div class="nav-wrapper">
             <nav id="navigation" class="clearfix">
                 <ul class="nav">
@@ -29,12 +29,15 @@
                             </ul>
                     </li> 
                     <div class="nav__link--item-container">
-                        <li><a id="home-link" class="nav__title nav__link--item" href="#home" data-smoothie>Music Savants</a></li>
-                        <li> <a id="contact-link" class="nav__link nav__link--item" href="#contact" data-smoothie>Contact Us</a></li>
-                        <li> <a id="about-link" class="nav__link nav__link--item" href="#about" data-smoothie>About</a></li>
-                        <li> <a id="services-link" class="nav__link nav__link--item" href="#services" data-smoothie>Services</a></li>
-                        <li> <a class="nav__mail material-icons nav__link nav__link--item" href="mailto:jimfelliwebdev@gmail.com" target="_top">mail_outline</a></li>
-                        <li> <a class="material-icons nav__call nav__link nav__link--item" href="tel: +12222222222">call</a></li>
+                        <li><a href="#home"  class="link nav__title nav__link--item" data-smoothie>Music Savants</a></li>
+                        <div class="nav__menu--flex">
+                        <li> <a href="#services"  class="nav__link link nav__link--item" data-smoothie>Services</a></li>
+                        <li> <a href="#about" class="nav__link link nav__link--item"  data-smoothie>About</a></li>
+                        <li> <a href="#contact" class="nav__link link nav__link--item"  data-smoothie>Contact Us</a></li>
+                    </div>
+                        <li> <a class="nav__mail material-icons nav__link nav__link--item link" href="mailto:jimfelliwebdev@gmail.com" target="_top">mail_outline</a></li>
+                        <li> <a class=" link material-icons nav__call nav__link nav__link--item" href="tel: +12222222222">call</a></li>
+                    
                     </div>
                 </ul>
             </nav>
@@ -73,7 +76,7 @@
         
     </header>
     <div class="content">
-        <div class="services" id="services">
+        <div class="services menu-section" id="services">
             <h2>Services</h2>
             <div class="services__content">
                 <div class="services__para">
@@ -84,7 +87,7 @@
                 <img class="services__image" src="images/sax.jpg" alt="placeholder">
             </div>
         </div>
-        <div class="about" id="about">
+        <div class="about menu-section" id="about">
             <h2>About</h2>
             <div class="about__content">
                 <p>Established in 2012, Music Savants has been connecting students with teachers regularly for over seven years.  We recently opened our first store, located at 101 Makebelieve ln, Sewell NJ, 08080.  Feel free to stop in and discover what instrument is best for you! </p>
@@ -92,12 +95,38 @@
             </div>
             <img class="about__image" src="images/flute.jpg" alt="placeholder">
         </div>
-        <div class="contact" id="contact">
-            <h2>Contact Us</h2>
-            <div class="contact__container--float">
+
+            <div class="contact section menu-section" id="contact">
+                    <h2 class="section__header">Contact Us</h2>
+                    <div class="contact__container contact__container--info">
+                      <div class="contact__address-container">
+                        <div class="contact__address-info">
+                          <p>What makes Music Savants special, is our ability to come to you, and work around your schedule. In order to do
+                            this, we need some basic information.</p>
+                          <p>Please fill out this basic form so we can begin finding the best teacher for you! If you don't hear from us
+                            without 24 hours, your first lesson is free!</p>
+                        </div>
+                        <div class="contact__address contact__address--email">Email: <a class="contact__address--link"
+                            href="mailto:jimfelliwebdev@gmail.com">jimfellidev@gmail.com</a></div>
+                        <div class="contact__address contact__address--phone">Phone: 222-222-2222</div>
+                        <div class="contact__address contact__address--add">Address: 123 Fake st</div>
+                      </div>    
+                      
+                      <!-- responive google embed -->
+                  <div class="map-container"> Stop by for a visit!
+                        <div class="google-maps">
+                          <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3065.2366987537634!2d-75.06867938478827!3d39.801682079441356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6d18bf389cfab%3A0x8423f07dede87a4!2sHoly+Tomato!5e0!3m2!1sen!2sus!4v1565001583119!5m2!1sen!2sus"
+                            width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                      </div>
+                  
+                    </div>
+
                 <!-- FORM -->
-                <div class="form__container" id="form">
-                    <form class="form">
+                <div class="contact__container contact__container--form form__container">
+                        <h2 id="thanks">Thank you!  We'll see you soon!</h2>
+                    <form class="form" id="form">
                     <!-- this goes in form -> action="action_page.php" -->
                         <label for="name">Name</label>
                             <input type="text" class="form__name" name="name" placeholder="Your name..">
@@ -122,23 +151,9 @@
                         </div>
                     </form>
                 </div>
-                <h2 id="thanks">Thank you!  We'll see you soon!</h2>
             </div>
-                <div class="contact__address" > <p>What makes Music Savants special, is our ability to come to you, and work around your schedule.  In order to do this, we need some basic information.</p> <p>Please fill out this basic form so we can begin finding the best teacher for you!  If you don't hear from us without 24 hours, your first lesson is free!</p></div> 
-                <div class="contact__address contact__address--email">Email: <a  class="contact__address--link" href="mailto:jimfelliwebdev@gmail.com">jimfellidev@gmail.com</a></div>
-                <div class="contact__address contact__address--phone">Phone: 222-222-2222</div>
-                <div class="contact__address contact__address--add">Address: 123 Fake st</div>
-            </div>      
-            <!-- responive google embed -->
-
-            <!-- <div class="google-maps-text">Swing by for a visit!</div> -->
-            <div class="map-container"> Stop by for a visit!
-                <div class="google-maps">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3065.2366987537634!2d-75.06867938478827!3d39.801682079441356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6d18bf389cfab%3A0x8423f07dede87a4!2sHoly+Tomato!5e0!3m2!1sen!2sus!4v1565001583119!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
+        <!-- </div> -->
+    
     <footer>
       <p class="copyright"><a class="copyright__link" href="https://github.com/jimfellidev">&copy; 2019 Jim Felli</a></p>
     </footer>

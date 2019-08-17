@@ -45,6 +45,22 @@ header {
   position: relative;
 }
 
+.nav__menu--flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 0;
+}
+
+@media screen and (max-width: 576px) {
+  .nav__menu--flex {
+    display: none;
+  }
+}
+
 .nav__link {
   float: right;
 }
@@ -264,6 +280,16 @@ header {
   background: #F5F0F6 !important;
   height: 2px !important;
   width: 30px !important;
+}
+
+.menu-active {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 576px) {
+  .menu-active {
+    text-decoration: none;
+  }
 }
 
 html, body {
@@ -592,11 +618,77 @@ body {
   text-align: left;
 }
 
-@media screen and (min-width: 768px) {
-  .contact__container {
-    float: right;
-    width: 35%;
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.section__header {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  text-align: center;
+}
+
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    display: block;
   }
+}
+
+.contact__container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.contact__container--info {
+  -ms-flex-preferred-size: 45%;
+      flex-basis: 45%;
+  padding-right: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__container--info {
+    padding-right: 0;
+  }
+}
+
+.contact__container--form {
+  -ms-flex-preferred-size: 55%;
+      flex-basis: 55%;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__container--form {
+    padding-top: 30px;
+  }
+}
+
+.map-container {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.google-maps {
+  position: relative;
+  padding-bottom: 65%;
+  height: 0;
+  overflow: hidden;
+}
+
+.google-maps iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 #thanks {
@@ -611,22 +703,8 @@ body {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
-  margin-bottom: 30px;
   text-align: left;
-}
-
-@media screen and (min-width: 768px) {
-  .form {
-    width: 85%;
-    display: inline-block;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .form {
-    width: 75%;
-    display: inline-block;
-  }
+  height: 100%;
 }
 
 input[type=text], select, textarea {
@@ -681,41 +759,6 @@ input[type=submit]:hover {
     float: right;
     width: 65%;
   }
-}
-
-.google-maps {
-  position: relative;
-  padding-bottom: 65%;
-  height: 0;
-  overflow: hidden;
-  margin: 0% 10% 0 10%;
-}
-
-@media screen and (min-width: 992px) {
-  .google-maps {
-    margin: 0 20% 0 20%;
-    padding-bottom: 50%;
-  }
-}
-
-.google-maps-text {
-  text-align: center;
-  margin-bottom: 26px;
-}
-
-.google-maps iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-  padding-bottom: 5%;
-}
-
-.map-container {
-  margin-top: -30px;
-  padding-bottom: 30px;
-  text-align: center;
 }
 
 body {
