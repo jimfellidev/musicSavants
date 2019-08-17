@@ -80,34 +80,39 @@ header {
   top: 50%;
 }
 
-.nav__link--item:after {
-  content: "";
-  display: inline-block;
-  height: 2.5px;
-  background: #F5F0F6;
-  position: absolute;
-  left: 0;
-  -webkit-transform: translate(0, 4px);
-          transform: translate(0, 4px);
-  opacity: 0;
-  -webkit-transition: opacity 0.2s, -webkit-transform 0.3s;
-  transition: opacity 0.2s, -webkit-transform 0.3s;
-  transition: opacity 0.2s, transform 0.3s;
-  transition: opacity 0.2s, transform 0.3s, -webkit-transform 0.3s;
-  padding: 0;
-  border-radius: 30%;
-  width: 100%;
-  bottom: -4px;
-}
-
 .nav__link--item:hover {
-  cursor: pointer;
+  opacity: .5;
 }
 
-.nav__link--item:hover:after {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  opacity: 1;
+@media screen and (max-width: 576px) {
+  .nav__link--item:after {
+    content: "";
+    display: inline-block;
+    height: 2.5px;
+    background: #F5F0F6;
+    position: absolute;
+    left: 0;
+    -webkit-transform: translate(0, 4px);
+            transform: translate(0, 4px);
+    opacity: 0;
+    -webkit-transition: opacity 0.2s, -webkit-transform 0.3s;
+    transition: opacity 0.2s, -webkit-transform 0.3s;
+    transition: opacity 0.2s, transform 0.3s;
+    transition: opacity 0.2s, transform 0.3s, -webkit-transform 0.3s;
+    padding: 0;
+    border-radius: 30%;
+    width: 100%;
+    bottom: -4px;
+  }
+  .nav__link--item:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+  .nav__link--item:hover:after {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    opacity: 1;
+  }
 }
 
 .nav__dropdown {
@@ -282,8 +287,29 @@ header {
   width: 30px !important;
 }
 
-.menu-active {
-  text-decoration: underline;
+@media screen and (min-width: 576px) {
+  .menu-active:after {
+    content: "";
+    display: inline-block;
+    height: 2.5px;
+    background: #F5F0F6;
+    position: absolute;
+    left: 0;
+    -webkit-transform: translate(0, 4px);
+            transform: translate(0, 4px);
+    opacity: 0;
+    -webkit-transition: opacity 0.2s, -webkit-transform 0.3s;
+    transition: opacity 0.2s, -webkit-transform 0.3s;
+    transition: opacity 0.2s, transform 0.3s;
+    transition: opacity 0.2s, transform 0.3s, -webkit-transform 0.3s;
+    padding: 0;
+    border-radius: 30%;
+    width: 100%;
+    bottom: -4px;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 576px) {

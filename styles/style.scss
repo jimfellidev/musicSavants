@@ -132,17 +132,36 @@ header {
             text-decoration: none;
             border-radius: 8%;
             top: 50%;
-            &:after {
+
+            // switched to hover opacity to remove double underline
+            &:hover {
+                opacity: .5;
+            }
+            @media screen and (max-width: $sm) {
+                 &:after {
                 @include afterLine;
                 width: 100%;
                 bottom: -4px;
             }
             &:hover {
                 cursor: pointer;
+                opacity: 1;
                 &:after {
                     @include afterLineHover;
                 }
             }
+            }
+            // &:after {
+            //     @include afterLine;
+            //     width: 100%;
+            //     bottom: -4px;
+            // }
+            // &:hover {
+            //     cursor: pointer;
+            //     &:after {
+            //         @include afterLineHover;
+            //     }
+            // }
         }
     }
 
@@ -263,11 +282,17 @@ header {
 
 
 .menu-active {
-    text-decoration: underline;
+    &:after {
+        @media screen and (min-width: $sm) {
+            @include afterLine;
+            width: 100%;
+            bottom: -4px;
+            @include afterLineHover;
+            }
+        }
     @media screen and (max-width: $sm) {
         text-decoration: none;
     }
-
 }
 
 // .hamburger-inner .hamburger-inner:after .hamburger-inner:before {
