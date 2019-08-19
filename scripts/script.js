@@ -1,9 +1,4 @@
-
-  
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-
-// This works, but doesn't work fluently with click off menu to close
+ 
 const menuId = document.getElementById("myDropdown");
 const menu = document.querySelector('.nav__dropbtn--content');
 const menuToggle = document.querySelector('.nav__dropbtn');
@@ -11,17 +6,14 @@ const menuItem = document.querySelector('.nav__dropbtn--item');
 const hamburger = document.querySelector(".hamburger");
 
 
-// ON CLICK HAMBURGER MENU OPEN/CLOSE    DOESN'T CLOSE WITH OFF CLICK?
+// ON CLICK HAMBURGER MENU OPEN/CLOSE    
 hamburger.addEventListener("click", function() {
-  // Toggle class "is-active"
   hamburger.classList.toggle("is-active");
-  //  open/close menu
   if (hamburger.classList.contains('is-active')){
     menuId.classList.add("show");
   } else {
     menuId.classList.remove("show");
   } 
-  
 });
 
 
@@ -90,90 +82,24 @@ document.getElementById('form__submit').addEventListener('click',function hide()
 
 smoothie();
 
-// throttle   -need assistance    below is basic layout
 
 
-function throttle(func, wait, options) {
-  var context, args, result;
-  var timeout = null;
-  var previous = 0;
-  if (!options) options = {};
-  var later = function() {
-    previous = options.leading === false ? 0 : Date.now();
-    timeout = null;
-    result = func.apply(context, args);
-    if (!timeout) context = args = null;
-  };
+
+
+const debounce = (func, delay) => {
+  let inDebounce
   return function() {
-    var now = Date.now();
-    if (!previous && options.leading === false) previous = now;
-    var remaining = wait - (now - previous);
-    context = this;
-    args = arguments;
-    if (remaining <= 0 || remaining > wait) {
-      if (timeout) {
-        clearTimeout(timeout);
-        timeout = null;
-      }
-      previous = now;
-      result = func.apply(context, args);
-      if (!timeout) context = args = null;
-    } else if (!timeout && options.trailing !== false) {
-      timeout = setTimeout(later, remaining);
-    }
-    return result;
-  };
-};
+    const context = this
+    const args = arguments
+    clearTimeout(inDebounce)
+    inDebounce = setTimeout(() => func.apply(context, args), delay)
+  }
+}
 
 
 
 
-// menu scroll
-// (function() {
-//   'use strict';
-
-//   var section = document.querySelectorAll(".menu-section");
-//   var sections = {};
-//   var i = 0;
-
-//   Array.prototype.forEach.call(section, function(e) {
-//     sections[e.id] = e.offsetTop;
-//   });
-
-//   window.onscroll = function() {
-//     var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-
-//     for (i in sections) {
-//       if (sections[i] <= scrollPosition) {
-//         document.querySelector('.menu-active').setAttribute('class', 'nav__link--item');
-//         document.querySelector('a[href*=' + i + ']').setAttribute('class', 'menu-active');
-//       }
-//     }
-//   };
-// })();
-
-
-// classList.remove('menu-active');
-
-// var section = document.querySelectorAll(".menu-section");
-//   var sections = {};
-//   var i = 0;
-
-//   Array.prototype.forEach.call(section, function(e) {
-//     sections[e.id] = e.offsetTop;
-//   });
-
-//   window.onscroll = function() {
-//     var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-
-//     for (i in sections) {
-//       if (sections[i] <= scrollPosition) {
-//         document.querySelector('.menu-active').classList.remove('menu-active');
-//         document.querySelector('a[href*=' + i + ']').classList.add('menu-active');
-//       }
-//     }
-//   };
-
+// Scroll to change menu item
 
   const links = document.querySelectorAll('.nav__link--item');
 const sections = document.querySelectorAll('.menu-section');
@@ -186,9 +112,86 @@ function changeLinkState() {
   
   links.forEach((link) => link.classList.remove('menu-active'));
   links[index].classList.add('menu-active');
-  // dropLink.forEach((link) => link.classList.remove('menu-active'));
-  // dropLink[index].classList.add('menu-active');
 }
 
 changeLinkState();
-window.addEventListener('scroll', changeLinkState);
+// window.addEventListener('scroll', changeLinkState);
+
+window.addEventListener('scroll', debounce(function() {
+  changeLinkState();
+} , 18));
+
+
+
+// TEST
+// const throttle = (func, limit) => {
+//   let lastFunc
+//   let lastRan
+//   return function() {
+//     const context = this
+//     const args = arguments
+//     if (!lastRan) {
+//       func.apply(context, args)
+//       lastRan = Date.now()
+//     } else {
+//       clearTimeout(lastFunc)
+//       lastFunc = setTimeout(function() {
+//         if (Date.now() - lastRan >= limit) {
+//           func.apply(context, args)
+//           lastRan = Date.now()
+//         }
+//       }, limit - (Date.now() - lastRan))
+//     }
+//   }
+// }
+
+// window.addEventListener('scroll', throttle(function() {
+//   changeLinkState())
+// }, 1000));
+
+// const throttle = (func, limit) => {
+//   let lastFunc
+//   let lastRan
+//   return function() {
+//     const context = this
+//     const args = arguments
+//     if (!lastRan) {
+//       func.apply(context, args)
+//       lastRan = Date.now()
+//     } else {
+//       clearTimeout(lastFunc)
+//       lastFunc = setTimeout(function() {
+//         if ((Date.now() - lastRan) >= limit) {
+//           func.apply(context, args)
+//           lastRan = Date.now()
+//         }
+//       }, limit - (Date.now() - lastRan))
+//     }
+//   }
+// }
+
+
+
+// const throttle = (func, limit) => {
+//   let lastFunc
+//   let lastRan
+//   return function() {
+//     const context = this
+//     const args = arguments
+//     if (!lastRan) {
+//       func.apply(context, args)
+//       lastRan = Date.now()
+//       console.log('test1')
+//     } else {
+//       clearTimeout(lastFunc)
+//       console.log('test2')
+//       lastFunc = setTimeout(function() {
+//         if ((Date.now() - lastRan) >= limit) {
+//           func.apply(context, args)
+//           lastRan = Date.now()
+//           console.log('test 3')
+//         }
+//       }, limit - (Date.now() - lastRan))
+//     }
+//   }
+// }

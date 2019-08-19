@@ -139,18 +139,20 @@ header {
             }
             @media screen and (max-width: $sm) {
                  &:after {
-                @include afterLine;
-                width: 100%;
-                bottom: -4px;
-            }
-            &:hover {
-                cursor: pointer;
-                opacity: 1;
-                &:after {
-                    @include afterLineHover;
+                    @include afterLine;
+                    width: 100%;
+                    bottom: -4px;
+                }
+                &:hover {
+                    cursor: pointer;
+                    opacity: 1;
+                    &:after {
+                        @include afterLineHover;
+                    }
                 }
             }
-            }
+
+            // If choose to go back to underline instead of hover opacity it 
             // &:after {
             //     @include afterLine;
             //     width: 100%;
