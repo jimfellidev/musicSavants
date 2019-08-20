@@ -133,10 +133,7 @@ header {
             border-radius: 8%;
             top: 50%;
 
-            // switched to hover opacity to remove double underline
-            &:hover {
-                opacity: .5;
-            }
+            
             @media screen and (max-width: $sm) {
                  &:after {
                     @include afterLine;
@@ -153,17 +150,17 @@ header {
             }
 
             // If choose to go back to underline instead of hover opacity it 
-            // &:after {
-            //     @include afterLine;
-            //     width: 100%;
-            //     bottom: -4px;
-            // }
-            // &:hover {
-            //     cursor: pointer;
-            //     &:after {
-            //         @include afterLineHover;
-            //     }
-            // }
+            &:after {
+                @include afterLine;
+                width: 100%;
+                bottom: -4px;
+            }
+            &:hover {
+                cursor: pointer;
+                &:after {
+                    @include afterLineHover;
+                }
+            }
         }
     }
 
@@ -284,6 +281,7 @@ header {
 
 
 .menu-active {
+    pointer-events: none;
     &:after {
         @media screen and (min-width: $sm) {
             @include afterLine;
