@@ -33,7 +33,6 @@ document.addEventListener("click", function(event){
   const nav = document.querySelector(".nav-wrapper");
   var isInNav = isDescendant(nav, event.target);
   console.log('isInNav', isInNav);
-  // KD - we need to check if the menu is already open, then if the user clicked inside of the nav
   if (hamburger.classList.contains('is-active') && isInNav) {
     console.log('true')      
   } else {
