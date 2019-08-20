@@ -295,12 +295,6 @@ header {
     }
 }
 
-// .hamburger-inner .hamburger-inner:after .hamburger-inner:before {
-//     color: $white !important;
-// }
-
-
-// new slideshow //
 
 html, body {
     position: relative;
@@ -407,8 +401,6 @@ body {
     }
 }
 
-
-
 .swiper-button-next {
     border: solid $white;
     border-width: 0 3px 3px 0;
@@ -445,7 +437,6 @@ body {
 // ---- Content container ---- //
 
 .content {    
-    
     font-family: 'Open Sans', sans-serif;
     background-color: rgb(252, 248, 232);
     background-image: url("https://transparenttextures.com/patterns/white-brushed.png");
@@ -456,7 +447,6 @@ body {
         font-size: 30px;
     }
 }
-
 
 // ------ Services------ //
 
@@ -549,7 +539,6 @@ body {
 }
 
 // ------ contact ------ //
-
 .contact {
     padding: 63px 5%;
     overflow: auto;
@@ -571,12 +560,10 @@ body {
         }
         &--link {
             color: black;
-
         }
     }
     &__container {
         text-align: left;
-       
     }
 }
 
@@ -598,7 +585,6 @@ body {
         display: block;
     }
   }
-  
   .contact__container {
       box-sizing: border-box;
     &--info {
@@ -609,7 +595,6 @@ body {
     }
     }
     &--form {
-    //   background: teal;
        flex-basis: 55%;
        @media screen and (max-width: $med) {
         padding-top: 30px;
@@ -620,19 +605,14 @@ body {
 
 .map-container {
     margin-top: 50px;
-    // padding-bottom: 30px;
     text-align: center;
-}
-  
+} 
   .google-maps {
     position: relative;
     padding-bottom: 65%;
     height: 0;
     overflow: hidden;
-    // margin: 0% 10% 0 10%;
-    
   }
-  
   .google-maps iframe {
     position: absolute;
     top: 0;
@@ -649,17 +629,14 @@ body {
     color: $brown;
     padding-top: 100px;
 }
-
 // FORM
 .form {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
-    // margin-bottom: 30px;
     text-align: left;
     height: 100%;
   }
-
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px;  
@@ -687,9 +664,6 @@ input[type=text], select, textarea {
   .submit-wrapper {
       text-align: center;
   }
-//   .mapouter {}
-
-
 .copyright {
     border-top: solid $tan 1px;
     text-align: center;
@@ -709,75 +683,7 @@ input[type=text], select, textarea {
         width: 65%;
     }
 }
-
-
-
-
 // ------  Content  ------ //
 body {
     margin: 0;
 }
-
-// ------ text-align Center on small MQ ------  experiment
-
-// .content, .contact__address {
-//     @media screen and (max-width: $sm) {
-//         text-align: center;
-//     }
-// }
-
-
-
-
-
-
-
-
-// &--serv:after {
-//     @include afterLine;
-// }
-// &--serv:hover {
-//     &:after {
-//         transform: translate(0, 0);
-//         opacity: 1; 
-//     }
-// }
-// &--about:after {
-//     @include afterLine;
-// }
-// &--about:hover {
-//     &:after {
-//         transform: translate(0, 0);
-//         opacity: 1; 
-//     }
-// }
-// &--cont:after {
-//     @include afterLine;
-// }
-// &--cont:hover {
-//     &:after {
-//         transform: translate(0, 0);
-//         opacity: 1; 
-//     }
-// }
-
-
-// &:after {
-//     content: "";
-//     display: inline-block;
-//     width: 100%;
-//     height: 3px;
-//     background: tomato;
-//     position: absolute;
-//     left: 0;
-//     bottom: -3px;
-//     transform: translate(0, 4px);
-//     opacity: 0;
-//     transition: opacity 0.2s, transform 0.3s;
-//   }
-//   &:hover {
-//     &:after {
-//       transform: translate(0, 0);
-//       opacity: 1; 
-//     }
-// }
