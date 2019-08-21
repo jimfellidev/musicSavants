@@ -42,8 +42,6 @@ document.addEventListener("click", function(event){
   }
 })    
 
-
-
     // ----------- slideshow --------- //
 
 var swiper = new Swiper('.swiper-container', {
@@ -81,23 +79,6 @@ document.getElementById('form__submit').addEventListener('click',function hide()
 
 smoothie();
 
-
-
-// Debounce
-
-const debounce = (func, delay) => {
-  let inDebounce
-  return function() {
-    const context = this
-    const args = arguments
-    clearTimeout(inDebounce)
-    inDebounce = setTimeout(() => func.apply(context, args), delay)
-  }
-}
-
-
-
-
 // Scroll to change menu item
 
   const links = document.querySelectorAll('.nav__link--item');
@@ -113,12 +94,9 @@ function changeLinkState() {
   links[index].classList.add('menu-active');
 }
 
-changeLinkState();
+
+// hold on to just in case throttle has problems
+// changeLinkState();
 // window.addEventListener('scroll', changeLinkState);
-
-window.addEventListener('scroll', debounce(function() {
-  changeLinkState();
-} , 18));
-
 
 
