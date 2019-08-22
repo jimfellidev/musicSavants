@@ -75,9 +75,9 @@ document.getElementById('form__submit').addEventListener('click',function hide()
 }, false);
 
 
-// Smooth Scroll -import from smoothie.min
 
-smoothie();
+
+
 
 // Scroll to change menu item
 
